@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ site.title }}: {{ page.title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+
+    <link href='http://fonts.googleapis.com/css?family=Lilita+One|Russo+One' rel='stylesheet' type='text/css'>
+
+    <link rel="apple-touch-icon-precomposed" href="/assets/ios-icon.png" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <script src="/js/modernizer.js"></script>
+  </head>
+  <body>
+
+    <div class="main">
+      <div class="social">
+        <a class="icon-envelope" href="#"></a>
+        <a class="icon-twitter" href="http://twitter.com/lo_ise"></a>
+      </div>
+      <!-- site header -->
+      <header>
+        <a href="/" class="logo icon-globe"></a>
+        <h1>
+          <a href="/">{{ site.title }}</a>
+        </h1>
+        <div class="sub-heading">
+          {{ site.subtitle }}
+        </div>
+        <div class="social2">
+          <a class="icon-envelope" href="mailto:{{ site.email }}"></a>
+          <a class="icon-twitter" href="http://twitter.com/lo_ise"></a>
+        </div>
+      </header>
+
+      {{content}}
+
+      <!-- footer -->
+      <footer>
+        <div id="quote"></div>
+      </footer>
+
+    </div>
+
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

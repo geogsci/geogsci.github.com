@@ -1,0 +1,10 @@
+title: "RemoteSensing.io"
+subtitle: "Remote sensing tips and tricks"
+permalink: ":year/:month/:title"
+auto: true
+pygments: true
+domain: "remotesensing.io"
+url: "http://remotesensing.io"
+email: "chat@remotesensing.io"
+gh_issues_url: "https://github.com/geogsci/remotesensing.io/issues/new"
+lsi: true

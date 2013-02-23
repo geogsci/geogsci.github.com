@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<div class="post content">
+  <section>
+    <header>
+      <h2>
+        <span class="icon-file"></span>
+        {{ page.title }}</a>
+      </h2>
+      <time datetime="{{ page.date }}">
+        {{ page.date | date_to_string }}
+      </time>
+    </header>
+    <div class="article">
+      {{ content }}
+      <div class="error-report">
+        <span class="icon-bolt"></span>
+        Spot an error raise a <a target="_blank" href="{{ site.gh_issues_url }}?body=URL:+%3C{{ site.url }}/{{ page.url | cgi_escape }}%3E">ticket</a>
+      </div>
+    </div>
+  </section>
+
+  {% if site.related_posts.size > 0 %}
+    <div id="related">
+      <h2>Related Posts</h2>
+      <ul class="posts">
+        {% for post in site.related_posts limit:3 %}
+          <li>
+            <span>{{ post.date | date_to_string }}</span>
+            &raquo;
+            <a href="/{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
+
