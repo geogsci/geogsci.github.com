@@ -1,3 +1,3 @@
 # remotesensing.io
 
-The home of <http://remotesensing.io>
+The home of <http://blog.remotesensing.io>
