@@ -1,10 +1,10 @@
 title: "RemoteSensing.io"
-subtitle: "Remote sensing tips and tricks"
+subtitle: "Remote Sensing tips and tricks"
 permalink: ":year/:month/:title"
 auto: true
 pygments: true
-domain: "remotesensing.io"
-url: "http://remotesensing.io"
+domain: "blog.remotesensing.io"
+url: "http://blog.remotesensing.io"
 email: "chat@remotesensing.io"
 gh_issues_url: "https://github.com/geogsci/geogsci.github.com/issues/new"
 lsi: true
