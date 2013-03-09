@@ -1,3 +1,3 @@
 # blog.remotesensing.io
 
-The home of <http://blog.remotesensing.io>
+The home of the amazing <http://blog.remotesensing.io>
