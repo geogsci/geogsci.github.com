@@ -30,8 +30,8 @@ So in this very simple example, I will convert a single band georeferenced raste
     outdata = gdal.GetDriverByName("GTiff")
     outdata.Create(str(outfile),rows,cols,1,datatype)
 
-    # Write the array to the file
-    outdata.GetRasterBand(1).WriteArray(a)
+    # Write the array to the file, which is the original array in this example
+    outdata.GetRasterBand(1).WriteArray(arr)
 
     # Set a no data value if required
     outdata.GetRasterBand(1).SetNoDataValue(nodatav)
