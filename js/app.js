@@ -1,16 +1,21 @@
 window.onload = function() {
   // Quotes
   var quotes = [
-    {name: "Gail",   quote: "You're gonna scream your guts out, you'll be so happy."},
-    {name: "Matrix", quote: "Let off some steam, Bennett."},
-    {name: "Matrix", quote: "Don't disturb my friend, he's dead tired."},
-    {name: "Dutch", quote: "Run! Get to the chopper!"}
+    {name: "Futurama", quote: "Presented in double vision (where drunk)"},
+    {name: "Futurama", quote: "Proadly made on Earth"},
+    {name: "Futurama", quote: "Condemned by the Space Pope"},
+    {name: "Futurama", quote: "Not Y3K Compliant"},
+    {name: "Futurama", quote: "Touch eyeballs to screen for cheap laser surgery"},
+    {name: "Futurama", quote: "Deciphered From Crop Circles"},
+    {name: "Futurama", quote: "Known to cause insanity in laboratory mice"},
+    {name: "Futurama", quote: "Put on 3-D monocle now"},
+    {name: "Futurama", quote: "Made From 100% Recycled Pixels"},
   ];
 
   var idx = Math.floor(Math.random()*quotes.length);
 
   var quoteEl  = $("#quote");
-  quoteEl.html("\""+quotes[idx].quote+"\""+" - "+quotes[idx].name);
+  quoteEl.html("\""+quotes[idx].quote+"\"");
 
   // Make image open in a new window.
   $("img").each(function() {
