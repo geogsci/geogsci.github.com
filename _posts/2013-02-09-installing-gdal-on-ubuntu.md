@@ -2,11 +2,11 @@
 layout: post
 title: "Installing GDAL on Ubuntu"
 ---
-GDAL is amazing. I use it everyday for various raster handling tasks, such as converting weird file formats to more useable ones, reprojecting and querying datasets. 
+[GDAL](http://www.gdal.org/) is amazing. I use it everyday for various raster handling tasks, such as converting weird file formats to more useable ones, reprojecting and querying datasets. 
 
 Below is a quick guide to getting GDAL command line utilities up and running on Ubuntu. 
 
-First of all you will need to add the UbuntuGIS repository. Using a text editor, open the file `/etc/apt/sources.list` and add the following lines:
+First of all you will need to add the [UbuntuGIS](http://wiki.ubuntu.com/UbuntuGIS) repository. Using a text editor, open the file `/etc/apt/sources.list` and add the following lines:
 
     deb http://ppa.launchpad.net/ubuntugis/ppa/ubuntu <codename> main 
     deb-src http://ppa.launchpad.net/ubuntugis/ppa/ubuntu <codename> main
@@ -28,9 +28,3 @@ This will bring up a list of all packages that have 'gdal' in the description/ti
 You should also install python bindings, which can be really useful for tools such as [gdal_merge.py](http://www.gdal.org/gdal_merge.html) and [gdal_retile.py](http://www.gdal.org/gdal_retile.html)
 
 You're ready to start using GDAL.
-
-refs:
-
- * <http://www.gdal.org/>
- * <http://wiki.ubuntu.com/UbuntuGIS>
-
