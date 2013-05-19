@@ -32,5 +32,18 @@ window.onload = function() {
       el.attr("target", "_blank");
     }
   });
+
+  $(".expander").click(function() {
+    var el = $(this).closest(".article");
+    if(el.hasClass("collapse")) {
+      el.removeClass("collapse");
+    } else {
+      var st = $(window).scrollTop();
+      var ah = el.height()
+      el.addClass("collapse");
+      $(window).scrollTop(st-ah+250)
+    }
+    return false;
+  });
 };
 
