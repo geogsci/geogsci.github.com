@@ -47,6 +47,10 @@ h1, h2, time {
   font-family: 'Russo One', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
+.content {
+  padding-top: 20px;
+}
+
 .content section {
   position: relative;
   overflow: hidden;
@@ -78,7 +82,7 @@ img {
 }
 
 .main > header {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .main > header .logo {
