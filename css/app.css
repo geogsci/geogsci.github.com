@@ -11,7 +11,7 @@ html {
 body {
   height: 100%;
   color: #DDD;
-  background-color: black;
+  background-color: rgb(10,7,17);
   margin: 0;
   padding: 0;
   background-image: url("/assets/background.jpg");
@@ -47,6 +47,10 @@ h1, h2, time {
   font-family: 'Russo One', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
+.content {
+  padding-top: 20px;
+}
+
 .content section {
   position: relative;
   overflow: hidden;
@@ -78,7 +82,7 @@ img {
 }
 
 .main > header {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .main > header .logo {
@@ -185,6 +189,60 @@ section header h2 a {
   padding: 0 10px;
   border-radius: 0px 0px 1px 1px;
 }
+
+.article.collapse {
+  max-height: 250px;
+}
+
+.article a.expander {
+  text-decoration: none;
+  font-size: smaller;
+  margin-right: 5px;
+}
+
+.article a > .hide {display: block;}
+.article a > .show {display: none;}
+
+.article.collapse a > .hide {display: none;}
+.article.collapse a > .show {display: block;}
+
+.article.collapse .fade {
+  display: block;
+}
+
+.fade {
+  display: none;
+  height: 100px;
+  position: absolute;
+  bottom: 40px;
+  left: 0px;
+  right: 0px;
+  background: -moz-linear-gradient(top, rgba(2,2,2,0) 0%, rgba(27,27,27,0.07) 64%, rgba(27,27,27,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(2,2,2,0)), color-stop(64%,rgba(27,27,27,0.07)), color-stop(100%,rgba(27,27,27,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(2,2,2,0) 0%,rgba(27,27,27,0.07) 64%,rgba(27,27,27,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(2,2,2,0) 0%,rgba(27,27,27,0.07) 64%,rgba(27,27,27,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(2,2,2,0) 0%,rgba(27,27,27,0.07) 64%,rgba(27,27,27,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(2,2,2,0) 0%,rgba(27,27,27,0.07) 64%,rgba(27,27,27,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00020202', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+}
+
+.bottom-bit {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  height: 40px;
+  background-color: #1B1B1B;
+  overflow: hidden;
+}
+
+.bottom-bit a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+
 
 footer {
   position: absolute;
