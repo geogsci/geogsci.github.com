@@ -20,15 +20,14 @@ So in this very simple example, I will convert a single band georeferenced raste
 
     # First of all, gather some information from the original file
     [cols,rows] = arr.shape
-    datatype    = arr.dtype
     trans       = data.GetGeoTransform()
     proj        = data.GetProjection()
     nodatav     = data.GetNoDataValue()
     outfile     = "outputfile.tif"
 
     # Create the file, using the information from the original file
-    outdata = gdal.GetDriverByName("GTiff")
-    outdata.Create(str(outfile),rows,cols,1,datatype)
+    outdriver = gdal.GetDriverByName("GTiff")
+    outdata   = outdriver.Create(str(outfile), rows, cols, 1, gdal.GDT_Float32)
 
     # Write the array to the file, which is the original array in this example
     outdata.GetRasterBand(1).WriteArray(arr)
