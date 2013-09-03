@@ -19,7 +19,6 @@ Positives:
 Negatives:
 
  - Sometimes hard to read through the lessons on screen and there doesn't seem to be an easy way to download course material.
- - 
 
 I've now signed up to the next Python course, which should keep me busy for the next 6 months.
 
