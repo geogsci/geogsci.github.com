@@ -7,9 +7,9 @@ I've just completed the O'Reilly School of Technology [Python 1 course](http://w
 
 Whilst I have had previous Python experience, much of this was self taught. I have had a small amount of formal programming and scripting teaching, using IDL and csh. I quickly realised that Python would be a good language to learn in my chosen specialist area and given that I was having to use it more and more at work, I felt a formal education was required to fill gaps in my very basic knowledge (rather than trying to work through a book).
 
-Generally, i've found this course extremely beneficial. The guideline time for completion is 90 hours. As Python was not completely new to me, I completed it quicker than this. I imagine for someone completely new to programming, the 90 hours is a good guide. When you consider the price of the course, that's pretty good value.
+Generally, I've found this course extremely beneficial. The guideline time for completion is 90 hours. As Python was not completely new to me, I completed it quicker than this. I imagine for someone completely new to programming, the 90 hours is a good guide. When you consider the price of the course, that's pretty good value.
 
-Now that i've completed the course, I feel more confident with Python, I've learned some really valuable concepts and picked up some 'good practise'. It's a good introduction and I think it would suit someone completely new to programming, who wants to learn from scratch.
+Now that I've completed the course, I feel more confident with Python, I've learned some really valuable concepts and picked up some 'good practise'. It's a good introduction and I think it would suit someone completely new to programming, who wants to learn from scratch.
 
 Positives:
 - The course is well structured. It starts slowly, and gently introduces new concepts. It's broken down into manageable 'lessons' consisting of exercises, quizzes and assignments. These lessons are a good length meaning its easy to fit this course into a busy lifestyle.
@@ -19,7 +19,6 @@ Positives:
 Negatives:
 
  - Sometimes hard to read through the lessons on screen and there doesn't seem to be an easy way to download course material.
- - 
 
 I've now signed up to the next Python course, which should keep me busy for the next 6 months.
 
