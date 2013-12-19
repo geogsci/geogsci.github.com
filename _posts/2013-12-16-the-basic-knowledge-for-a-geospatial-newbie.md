@@ -12,7 +12,7 @@ The ways of gathering spatial data are increasing as technology improves. Even i
 
 ##Being a GIS monkey: data analysis
 
-Although I am a huge proponent of open source GIS, I still consider it valuable having some working knowledge of ArcGIS. Any of us who have used it will know its quirks, and where it is likely to crash. These things are learnt through putting in the hard yards with what can sometimes be a frustrating piece of software. At the same time as being familiar with this, it's also beneficial to keep in mind where this huge industry leader is headed in the future. Whether we like it or not, ESRI products are still heavily used, and it pays us to be aware of them.
+Although I am a huge proponent of open source GIS, I still consider it valuable having some working knowledge of ArcGIS. Any of us who have used it will know its quirks, and where it is likely to crash. These things are learnt through putting in the hard yards with what can sometimes be a frustrating piece of software. At the same time as being familiar with this, it is also beneficial to keep in mind where this huge industry leader is headed in the future. Whether we like it or not, ESRI products are still heavily used, and it pays us to be aware of them.
 
 More and more businesses are going open source when it comes to making decisions about budgets. Uptake of QGIS is increasing for this very reason. As a GIS professional, it should be increasingly easy to put together a business case to ditch ESRI and go open source, because the options just keep getting better. Freely available, with a willing and helpful online support community. What more do you need? 
 
