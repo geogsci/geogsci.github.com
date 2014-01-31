@@ -5,22 +5,20 @@ layout: "post"
 
 
 
-In an earlier post [I have talked about](http://blog.remotesensing.io/2013/05/Dealing-with-no-data-using-NumPy-masked-array-operations/) the usefulness of NumPy's masked array operations (link). Now heres a simple useage example, which I've put together after getting a bit unstuck while using them with GDAL datasets.
+In an earlier post [I have talked about](http://blog.remotesensing.io/2013/05/Dealing-with-no-data-using-NumPy-masked-array-operations/) the usefulness of NumPy's masked array operations. Now here's a simple useage example, which I decided to put together after getting a bit unstuck while using them with GDAL datasets.
 
 ##Input data
 Level 3 Global mapped SMOS Ocean Salinity dataset [accessed from the Centre Aval de Traitement des Donnees SMOS (CATDS)](http://www.catds.fr).
 
 ##The task
-To convert this into a scaled GeoTIFF. The data values in the raw NETCDF need to be linearly scaled, but we need to ignore values of -32767 indicating pixels with no data, or areas of land and sea ice in this case. 
+To convert this data into a scaled GeoTIFF. The integer data values in the raw NETCDF need to be linearly scaled to salinity values, but we need to ignore pixels of -32767 indicating areas of no data, land and sea ice in this case. Therefore I would do this by creating a NumPy masked array so any pixels of -32767 are ingored in the calculation and remain as -32767.
 
-Data centres will store.....  which brings me onto...
+Data centres will store data in integer values to cut down on data storage volume, which brings me on to...
 
 ##... The problem
-When I first put this together, I assumed when converting the data into a NumPy array using GDAL [in my usual way](http://blog.remotesensing.io/2013/03/using-gdal-with-python-basic-intro), the masked array functions would work. However, my resultant GeoTIFF no data pixels were being recorded as zeros rather than being labelled no data, rendering my whole method a failure. 
+When I first put this together, I assumed when converting the data into a NumPy array using GDAL [in my usual way](http://blog.remotesensing.io/2013/03/using-gdal-with-python-basic-intro), the masked array functions would work. However, for some reason the masked values turn into zeros after any calculation on the array which results in float values, rather than remaining the original value. So my resultant GeoTIFF had values of zero rather than -32767 in areas of land and sea ice.
 
-The issue occurs when the input data is stored as integer values in a data format such as NetCDF or HDF. Data centres do this to cut down on data volumne, so it requires the user to linearly scale the integers given slope and offset values. This gives the real physical values. 
-
-I did finally work out where this was going wrong in my script, and here's the function I wrote. The comments describe my point.
+I did finally work out where this was going wrong in my script, and here's the function I wrote. The key is to change the input array to data type float before creating a masked array.
 
     import numpy as np
     import osgeo.gdal as gdal
@@ -48,19 +46,17 @@ I did finally work out where this was going wrong in my script, and here's the f
       osarr   = os.ReadAsArray()
       [cols, rows] = osarr.shape
 
-      # THIS is the key to making masked arrays work with
-      # NumPY arrays you have read from GDAL datasets,
-      # the data type needs to be explicitly defined
+      # Here is where I define the arrays data type as float.
       osarr  = np.array(osarr, dtype=np.float32)
   
-      # then you can create the masked array
+      # Then you can create the masked array...
       m = np.ma.masked_values(osarr, nodata)
 
-      # and very quickly apply the linear scaling, ignoring the no data pixels
+      # ... and very quickly apply the linear scaling, ignoring the no data pixels.
       scaled = m * slope + inter
 
 
-      # and finally save out the GeoTIF
+      # And finally save out the GeoTIF
       outdata = gdal.GetDriverByName("GTiff")
       dst_ds = outdata.Create(outfile, rows, cols, 1, gdal.GDT_Float64)
       band = dst_ds.GetRasterBand(1)
@@ -73,7 +69,7 @@ I did finally work out where this was going wrong in my script, and here's the f
   
 ##To illustrate this further
 
-**First we convert the GDAL dataset to a NumPy array. `os` is the GDAL dataset.
+First we convert the GDAL dataset to a NumPy array. `os` is the GDAL dataset.
 
     >>> osarr = os.ReadAsArray()
     >>> osarr
