@@ -6,6 +6,7 @@ Using GDAL with Python opens up a lot of flexibility in raster processing. By co
 
 So in this very simple example, I will convert a single band georeferenced raster (GeoTiff), to a 2D NumPy array, and back again. Once the raster has been read in as an array, any raster operations are possible. 
 
+    {% highlight python %}
     from osgeo import gdal
     import numpy as np
 
@@ -40,3 +41,4 @@ So in this very simple example, I will convert a single band georeferenced raste
 
     # Write projection information
     outdata.SetProjection(proj)
+    {% endhighlight %}

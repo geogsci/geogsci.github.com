@@ -22,6 +22,8 @@ However, the areas of land and sea ice are classed as no data with a specific va
 ##The solution
 **Convert the input integer array to a float array before creating the masked array.** Here's the function I wrote. Firstly I converted my data into a NumPy array [in my usual way](http://blog.remotesensing.io/2013/03/using-gdal-with-python-basic-intro), taking acount of projection and transform information. The key is then to change the input array to data type float before creating a masked array.
 
+
+    {% highlight python %}
     import numpy as np
     import osgeo.gdal as gdal
     import osgeo.osr as osr
@@ -66,13 +68,15 @@ However, the areas of land and sea ice are classed as no data with a specific va
       dst_ds.SetGeoTransform(outgeo)
       dst_ds.SetProjection(outproj.ExportToWkt())
       band.WriteArray(scaled)
+      {% endhighlight %}
 
 
   
 ##To illustrate this further
 
 First we convert the GDAL dataset to a NumPy array. `os` is the GDAL dataset.
-
+    
+    {% highlight python %}
     >>> osarr = os.ReadAsArray()
     >>> osarr
     array([[-32767, -32767, -32767, ..., -32767, -32767, -32767],
@@ -83,8 +87,12 @@ First we convert the GDAL dataset to a NumPy array. `os` is the GDAL dataset.
            [-32767, -32767, -32767, ..., -32767, -32767, -32767],
            [-32767, -32767, -32767, ..., -32767, -32767, -32767]], dtype=int16)
     	   
+    {% endhighlight %}
+
 Then we create the masked array.	   
     
+
+    {% highlight python %}
     >>> m = np.ma.masked_values(osarr, nodata)
     >>> m
     masked_array(data =
@@ -112,13 +120,17 @@ Then we create the masked array.
            [-32767, -32767, -32767, ..., -32767, -32767, -32767],
            [-32767, -32767, -32767, ..., -32767, -32767, -32767],
            [-32767, -32767, -32767, ..., -32767, -32767, -32767]], dtype=int16)
-    
+    {% endhighlight %}
+
 And perform the linear scaling.
-    	   
-    >>> scaled = m * slope + inter
     
+    {% highlight python %}
+    >>> scaled = m * slope + inter
+    {% endhighlight %}
+
 Now we look at the output data, and see that all the no data values have turned into zeros, even though they should have been ignored in the calculation...
     
+    {% highlight python %}
     >>> scaled.data
     array([[ 0.,  0.,  0., ...,  0.,  0.,  0.],
            [ 0.,  0.,  0., ...,  0.,  0.,  0.],
@@ -127,15 +139,18 @@ Now we look at the output data, and see that all the no data values have turned 
            [ 0.,  0.,  0., ...,  0.,  0.,  0.],
            [ 0.,  0.,  0., ...,  0.,  0.,  0.],
            [ 0.,  0.,  0., ...,  0.,  0.,  0.]])
-    
+    {% endhighlight %}
     	   
 ... even though areas of real data do scale (picking a pixel in the sea).
     
+    {% highlight python %}
     >>> scaled.data[100,100]
     34.664999999999999
-    
+    {% endhighlight %}
+
 So instead we add this line to define the array as datatype float.
     
+    {% highlight python %}
     >>> osarr = np.array(osarr, dtype=np.float32)
     >>> m = np.ma.masked_values(osarr,nodata)
     >>> m.data
@@ -147,9 +162,11 @@ So instead we add this line to define the array as datatype float.
            [-32767., -32767., -32767., ..., -32767., -32767., -32767.],
            [-32767., -32767., -32767., ..., -32767., -32767., -32767.]], dtype=float32)
     >>> scaled = m * slope + inter
-    
+    {% endhighlight %}
+
 And now the scaled output no data values remain as they should
     
+    {% highlight python %}
     >>> scaled.data
     array([[-32767., -32767., -32767., ..., -32767., -32767., -32767.],
            [-32767., -32767., -32767., ..., -32767., -32767., -32767.],
@@ -166,7 +183,8 @@ And now the scaled output no data values remain as they should
            [ True,  True,  True, ...,  True,  True,  True],
            [ True,  True,  True, ...,  True,  True,  True],
            [ True,  True,  True, ...,  True,  True,  True]], dtype=bool)
-	   
+    {% endhighlight %}	   
+
 So when we write this to file and we get a dataset with all areas of land remaining with the no data value of -32767. 
 
 
