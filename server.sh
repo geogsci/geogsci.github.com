@@ -1,1 +1,1 @@
-jekyll --server --no-lsi
+jekyll serve -w
