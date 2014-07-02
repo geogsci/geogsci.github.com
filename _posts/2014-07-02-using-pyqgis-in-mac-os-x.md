@@ -26,10 +26,10 @@ Open your `~/.profile` for editing. Add the following lines:
     export PATH=$PATH:/Library/Frameworks/GDAL.framework/Programs/
     {% endhighlight%}
 
-Add this line to load external opengeo libraries, so you can save out your layers in various formats. Just swap out `Ireland` for whatever your Mac username is. 
+Add this line to load external opengeo libraries, so you can save out your layers in various formats. Just swap out `username` for whatever your Mac username is. 
 
     {% highlight bash %}
-    export PYTHONPATH=$PYTHONPATH:/Users/Ireland/.qgis2/python/plugins/opengeo/ext-libs/
+    export PYTHONPATH=$PYTHONPATH:/Users/username/.qgis2/python/plugins/opengeo/ext-libs/
     {% endhighlight%}
 
 Save this and type the following into the terminal.
