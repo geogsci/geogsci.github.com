@@ -1,1 +1,1 @@
-jekyll serve -w
+jekyll serve -w --trace

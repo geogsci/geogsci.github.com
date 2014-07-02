@@ -2,7 +2,7 @@ $(window).ready(function() {
   // Quotes
   var quotes = [
     {name: "Futurama", quote: "Presented in double vision (where drunk)"},
-    {name: "Futurama", quote: "Proadly made on Earth"},
+    {name: "Futurama", quote: "Proudly made on Earth"},
     {name: "Futurama", quote: "Condemned by the Space Pope"},
     {name: "Futurama", quote: "Not Y3K Compliant"},
     {name: "Futurama", quote: "Touch eyeballs to screen for cheap laser surgery"},
