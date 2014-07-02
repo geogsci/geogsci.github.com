@@ -29,7 +29,7 @@ Open your `~/.profile` for editing. Add the following lines:
 Add this line to load external opengeo libraries, so you can save out your layers in various formats. Just swap out `username` for whatever your Mac username is. 
 
     {% highlight bash %}
-    export PYTHONPATH=$PYTHONPATH:/Users/username/.qgis2/python/plugins/opengeo/ext-libs/
+    export PYTHONPATH=$PYTHONPATH:~/.qgis2/python/plugins/opengeo/ext-libs/
     {% endhighlight%}
 
 Save this and type the following into the terminal.
