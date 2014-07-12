@@ -1,3 +1,22 @@
+function show3DRender(el) {
+  var $el = $(el);
+  var iframe = $el.find("iframe");
+
+  if(!iframe.get(0)) {
+    $el.addClass("open");
+    var src = el.getAttribute("data-src");
+    iframe = document.createElement("iframe");
+    iframe.src = src;
+    $el.append(iframe);
+  }
+}
+
+function hide3DRender(el) {
+  var $el = $(el);
+  $el.removeClass("open");
+  $el.find("iframe").remove();
+}
+
 $(window).ready(function() {
   // Quotes
   var quotes = [
@@ -16,6 +35,10 @@ $(window).ready(function() {
 
   var quoteEl  = $("#quote");
   quoteEl.html("\""+quotes[idx].quote+"\"");
+
+  $(".threed-render").click(function() {
+    show3DRender(this);
+  });
 
   // Make image open in a new window.
   $("img").each(function() {
