@@ -13,5 +13,5 @@ The plugin downloads sea ice concentration data of Antarctica within a time rang
 
 ![Sea ice concentration January 2013](/assets/posts/sea_ice_map.png)
 
-As with all QGIS plugins, installaton is easy and is explained [here](http://seaicedata.remotesensing.io). I'm hoping to add more features in the future and potentially add it to the official QGIS plugin repo.
+As with all QGIS plugins, installaton is easy and is explained [here](http://seaicedata.remotesensing.io). I'm hoping to enhance it with a few more features in the future and potentially add it to the official QGIS plugin repo.
 
