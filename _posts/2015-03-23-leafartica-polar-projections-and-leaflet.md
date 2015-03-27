@@ -31,5 +31,8 @@ If you want to look more closely at this pretty simple implementation, head to t
 
 In the meantime, I'm continuiing to use this project as a way to learn and experiment with Leaflet, polar data and projections.
 
+
+![OrangeMug](/assets/posts/orangemug.jpeg)
+
+
 Thanks OrangeMug!
-(put in photo of OrangeMug)
