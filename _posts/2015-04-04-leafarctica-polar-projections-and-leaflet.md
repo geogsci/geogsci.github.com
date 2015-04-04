@@ -1,13 +1,13 @@
 ---
-title: "Leafarctica: polar projections in Leaflet
+title: "Leafarctica: polar projections and Leaflet
 layout: "post"
 ---
 
 I decided it was about time I made a web map using [Leaflet](http://leafletjs.com/). 
 
-To help make something really excellent, I teamed up with OrangeMug, and together we created [Leafarctica](http://lo-ise.github.io/leafarctica). 
+To help make something really excellent, I teamed up with [Orange Mug](http://github.com/orangemug), and together we created [Leafarctica](http://lo-ise.github.io/leafarctica). 
 
-![Leafarctica](/assets/posts/leafarctica.png)
+[![Leafarctica](/assets/posts/leafarctica.png)](http://lo-ise.github.io/leafarctica)
 
 We used a brilliant dataset of [daily Antarctic MODIS imagery from GIBS](https://earthdata.nasa.gov/about-eosdis/science-system-description/eosdis-components/global-imagery-browse-services-gibs) and implemented an idea for a really simple viewer with date selector.
 
@@ -25,14 +25,15 @@ Here's a walk through of the features we explored and used.
 
 4. [Leaflet-hash](http://mlevans.github.io/leaflet-hash/) is used to retain the current map view when switching between imagery dates. 
 
-5. Fit to bounds didn't work, we think because of a bug that is particularly problematic when operating close to zero coordinates (inevitable with polar projections). OrangeMug succesfully hacked a solution to this by setting viewable extent of the map using pixel coordinates of the corners of the dataset, depending on zoom level. 
 
-If you want to look more closely at this pretty simple implementation, head to th repo on GitHub. 
+5. `map.fitBounds()` wasn't working with our polar projection, so Orange Mug had to hack a solution. You can find it [here](http://github.com/lo-ise/leafarctica/gh-pages/hacks/keep-to-bounds.js). This isn't perfect however, because it stops any pan animation. 
 
-In the meantime, I'm continuiing to use this project as a way to learn and experiment with Leaflet, polar data and projections.
+If you want to look more closely at this pretty simple implementation, head to the [repo on GitHub](http://github.com/lo-ise/leafarctica/). 
 
-
-![OrangeMug](/assets/posts/orangemug.jpeg)
+In the meantime, I'm continuing to use this project as a way to learn and experiment with Leaflet, polar data and projections.
 
 
-Thanks OrangeMug!
+![Orange Mug](/assets/posts/orangemug.jpeg)
+
+
+Thanks Orange Mug!
