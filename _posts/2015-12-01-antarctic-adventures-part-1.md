@@ -10,7 +10,7 @@ In the run up to my trip, I was often faced with blank expressions when I tried 
 
 This is part 1 of two posts about Geoarctica and blogging from the far South.
 
-![Geoarctica](assets/posts/geoarctica.png)
+![Geoarctica](/assets/posts/geoarctica.png)
 
 
 ##A nice bespoke blog
